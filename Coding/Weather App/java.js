@@ -46,7 +46,7 @@ function apiRun(event) {
 let selectTemp = document.querySelector("#search-form");
 selectTemp.addEventListener("submit", apiRun);
 
-//DONT CHANGE BELOW ALL CORRECT
+
 
 function showWeather(response) {
   let local = document.querySelector("h1#local");
