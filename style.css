@@ -1,9 +1,19 @@
 .container {
-
-  background-color: rgb(85, 125, 220);
-  color: aliceblue;
+max-width: 600px;
+  background-color: rgb(223, 218, 218);
+  color: aquamarine;
   font-family: Arial, Helvetica, sans-serif;
+  padding: 30px;
+  border: 1px solid;
+  border-radius: 15px;
+}
+button {
+  background-color: aliceblue;
+  color: aquamarine;
+  border: 1px solid aqua;
+border-radius: 10px;
 }
 
-
-
+a {
+  color: aquamarine;
+}
