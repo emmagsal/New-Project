@@ -12,8 +12,19 @@ button {
   color: aquamarine;
   border: 1px solid aqua;
 border-radius: 10px;
+margin-top: 5px;
 }
 
 a {
   color: aquamarine;
 }
+
+h1 {
+text-transform: capitalize;
+
+}
+h2 {
+  font-size: xx-large;
+  
+}
+
