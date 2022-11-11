@@ -23,20 +23,22 @@ let day = days[now.getDay()];
 fullDate.innerHTML = `${day} ${hours}:${minutes}`;
 
 function showTemp(response) {
-  let temperature = document.querySelector("h2#temp");
+  let temperatureElement = document.querySelector("h2#temp");
   let temp = Math.round(response.data.main.temp);
-  temperature.innerHTML = `${temp}°C`;
-  
+  temperatureElement.innerHTML = `${temp}°C`;
+  let humidityElement = document.querySelector("#humidity");
+  let humidity = response.data.main.humidity;
+  humidityElement.innerHTML = `${humidity}% Humidity`;
+  console.log(response.data);
 }
 
 function apiRun(event) {
   event.preventDefault();
   let currentCity = document.querySelector("#search-input");
   let city = document.querySelector("#search-input").value;
-  //let temperature = document.querySelector("h2#temp");
   let h1 = document.querySelector("h1#local");
   h1.innerHTML = `${city}`;
-  //temperature.innerHTML = `${temp}°C`;
+  
   
   let apiKey = "81e334dfd2ddb96e6b5193c1f2e3e97f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
