@@ -35,7 +35,8 @@ function showTemp(response) {
   let weatherElement = document.querySelector("#description");
   let description = response.data.weather[0].description;
   weatherElement.innerHTML = `${description}`; 
-
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
   console.log(response.data);
 }
 
