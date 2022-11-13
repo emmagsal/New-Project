@@ -37,7 +37,7 @@ function showTemp(response) {
   weatherElement.innerHTML = `${description}`; 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
-  console.log(h2.unit);
+  celsiusTemperature = response.data.main.temp;
 }
 
 function apiRun(event) {
@@ -82,11 +82,11 @@ button.addEventListener("click", geoGo);
 
 function displayFahrenheit(event) {
   event.preventDefault();
-  let fahrenheitTemp = (14 * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("temp");
-  temperatureElement.innerHTML = fahrenheitTemp;
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("h2#temp");
+  temperatureElement.innerHTML = `${Math.round(fahrenheitTemp)}°F`;
 }
 
-
+let celsiusTemperature = null;
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", displayFahrenheit);
