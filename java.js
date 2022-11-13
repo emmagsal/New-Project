@@ -90,3 +90,13 @@ function displayFahrenheit(event) {
 let celsiusTemperature = null;
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", displayFahrenheit);
+
+
+function displaycelsius(event) {
+event.preventDefault();
+let temperatureElement = document.querySelector("h2#temp");
+temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
+}
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displaycelsius);
