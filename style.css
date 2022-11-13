@@ -25,8 +25,12 @@ text-transform: capitalize;
 }
 h2 {
   font-size: xx-large;
-  
-}
+  }
+
+h2.unit {
+    font-size: xx-small;
+    color: blueviolet;
+  }
 
 li {
   list-style: none;
