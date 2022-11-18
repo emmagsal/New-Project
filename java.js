@@ -22,9 +22,10 @@ let days = [
 let day = days[now.getDay()];
 fullDate.innerHTML = `${day} ${hours}:${minutes}`;
 
-function displayForecast() {
+function displayForecast(response) {
+  
+  
   let forecastElement = document.querySelector("#forecast");
-
   let forecastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat"];
   days.forEach(function (day) {
@@ -46,13 +47,17 @@ width="42"
 <span class="weather-forecast-low"> 12°</span>
 </div>
 </div>
-
-
-
-    `;})
-
+`;})
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+console.log(coordinates);
+let apiKey = "81e334dfd2ddb96e6b5193c1f2e3e97f";
+let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&&appid=${apiKey}&units=metric`;
+console.log(apiUrl);
+axios.get(apiUrl).then(displayForecast);
 }
 
 function showTemp(response) {
@@ -71,7 +76,8 @@ function showTemp(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
   celsiusTemperature = response.data.main.temp;
-  displayForecast();
+
+  getForecast(response.data.coord);
 }
 
 function apiRun(event) {
