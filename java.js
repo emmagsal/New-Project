@@ -22,6 +22,57 @@ let days = [
 let day = days[now.getDay()];
 fullDate.innerHTML = `${day} ${hours}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecastHTML = 
+    forecastHTML + 
+`
+   
+
+<div class="col-2">
+  <div class="weather-forecast-day">
+Thursday
+</div>
+<img
+src="http://openweathermap.org/img/wn/10d@2x.png"
+alt=""
+width="42"
+/>
+<br>
+<div class="weather-forecast-temp">
+<span class="weather-forecast-high">18°</span>
+<span class="weather-forecast-low"> 12°</span>
+</div>
+</div>
+
+
+
+    `;
+    forecastHTML =
+    forecastHTML +
+    `
+    <div class="col-2">
+  <div class="weather-forecast-day">
+Thursday
+</div>
+<img
+src="http://openweathermap.org/img/wn/10d@2x.png"
+alt=""
+width="42"
+/>
+<br>
+<div class="weather-forecast-temp">
+<span class="weather-forecast-high">18°</span>
+<span class="weather-forecast-low"> 12°</span>
+</div>
+</div>
+    `;
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemp(response) {
   let temperatureElement = document.querySelector("h2#temp");
   let temp = Math.round(response.data.main.temp);
@@ -38,6 +89,7 @@ function showTemp(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
   celsiusTemperature = response.data.main.temp;
+  displayForecast();
 }
 
 function apiRun(event) {
