@@ -1,7 +1,7 @@
 .container {
 max-width: 600px;
   background-color: rgb(223, 218, 218);
-  color: aquamarine;
+  color: blue;
   font-family: Arial, Helvetica, sans-serif;
   padding: 30px;
   border: 1px solid;
@@ -9,14 +9,14 @@ max-width: 600px;
 }
 button {
   background-color: aliceblue;
-  color: aquamarine;
+  color: blue;
   border: 1px solid aqua;
 border-radius: 10px;
 margin-top: 5px;
 }
 
 a {
-  color: aquamarine;
+  color: blue;
 }
 
 h1 {
@@ -39,4 +39,20 @@ li {
 
 li#wind {
   text-transform: none;
+}
+.weather-forecast {
+margin-top: 20px;
+text-align: center;
+
+}
+.weather-forecast-day {
+  font-size: 16px;
+}
+.weather-forecast-high {
+font-size: 13px;
+opacity: 0.6;
+}
+.weather-forecast-low {
+  font-size: 13px;
+  opacity: 0.5;
 }
