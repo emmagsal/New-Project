@@ -129,24 +129,3 @@ function geoGo() {
 }
 let button = document.querySelector("button");
 button.addEventListener("click", geoGo);
-
-function displayFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("h2#temp");
-  temperatureElement.innerHTML = `${Math.round(fahrenheitTemp)}°F`;
-}
-
-let celsiusTemperature = null;
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", displayFahrenheit);
-
-
-function displaycelsius(event) {
-event.preventDefault();
-let temperatureElement = document.querySelector("h2#temp");
-temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
-}
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", displaycelsius);
