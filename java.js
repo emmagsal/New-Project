@@ -52,8 +52,8 @@ width="42"
 />
 <br>
 <div class="weather-forecast-temp">
-<span class="weather-forecast-high"> ${forecastDay.temp.max}°</span>
-<span class="weather-forecast-low"> ${forecastDay.temp.min}°</span>
+<span class="weather-forecast-high"> ${Math.round(forecastDay.temp.max)}°</span>
+<span class="weather-forecast-low"> ${Math.round(forecastDay.temp.min)}°</span>
 </div>
 </div>
 `;})
