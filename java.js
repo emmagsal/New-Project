@@ -23,29 +23,26 @@ let day = days[now.getDay()];
 fullDate.innerHTML = `${day} ${hours}:${minutes}`;
 
 function displayForecast(response) {
-  console.log(response.data.daily);
-  
-  
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat"];
-  days.forEach(function (day) {
+  days.forEach(function (forecastDay) {
   forecastHTML = 
     forecastHTML + 
 `
    <div class="col-2">
   <div class="weather-forecast-day">
-${day}
+${forecastDay.dt}
 </div>
 <img
-src="http://openweathermap.org/img/wn/10d@2x.png"
+src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
 alt=""
 width="42"
 />
 <br>
 <div class="weather-forecast-temp">
-<span class="weather-forecast-high">18°</span>
-<span class="weather-forecast-low"> 12°</span>
+<span class="weather-forecast-high"> ${forecastDay.temp.max}°</span>
+<span class="weather-forecast-low"> ${forecastDay.temp.min}°</span>
 </div>
 </div>
 `;})
